@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "fs": "^0.0.1-security",
+    "lodash.flattendeep": "^4.4.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "test": "jest"
+  }
+}
