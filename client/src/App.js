@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import PageImg from './components/PageImg';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return <div className="App">App</div>;
-  }
-}
-
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <Route path="/" component={PageImg} />
+    </div>
+  </BrowserRouter>
+);
 export default App;
