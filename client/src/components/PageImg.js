@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
 import { getImagesLinks } from '../utils/apiCalls';
+import {
+  Menu,
+  ALink,
+  ContainerImg,
+  BlockImg,
+  Image,
+} from '../style/PageImgStyled';
 
 class PageImg extends PureComponent {
   state = {
@@ -33,23 +40,27 @@ class PageImg extends PureComponent {
     const { images, directories } = this.state;
     const imagesMapped =
       images.length !== 0 ? (
-        images.map(imgLink => <img key={imgLink} src={imgLink} alt="" />)
+        images.map(imgLink => (
+          <BlockImg key={imgLink}>
+            <Image src={imgLink} alt="" />
+          </BlockImg>
+        ))
       ) : (
         <p>no images</p>
       );
     const links = directories.map(({ dirTitle, path }) => (
-      <a key={path} href={path}>
+      <ALink key={path} href={path}>
         {dirTitle}
-      </a>
+      </ALink>
     ));
 
     return (
-      <div className="App">
-        <div>
-          <a href="/">home</a>
+      <div>
+        <Menu>
+          <ALink href="/">home</ALink>
           {links}
-        </div>
-        <div>{imagesMapped}</div>
+        </Menu>
+        <ContainerImg>{imagesMapped}</ContainerImg>
       </div>
     );
   }
