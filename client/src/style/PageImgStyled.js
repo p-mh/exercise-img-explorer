@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Menu = styled.div`
   margin: 20px 0;
 `;
 
-export const ALink = styled.a`
+export const ALink = styled(Link)`
   margin: 20px;
   font-size: 20px;
   text-transform: uppercase;

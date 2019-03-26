@@ -11,6 +11,10 @@ app.get('/getDatas', (req, res) => {
   res.json(img);
 });
 
+app.use('/', express.static('../client/build/'));
+
+app.use('/*', express.static('../client/build/index.html'));
+
 app.listen(8080, () => {
   console.log('server started');
 });

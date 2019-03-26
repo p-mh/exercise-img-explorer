@@ -10,6 +10,8 @@
   },
   "scripts": {
     "start:dev": "nodemon index.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "docker build -f ../Dockerfile -t paulinemh/img-explo:latest ../",
+    "deploy": "npm run build && docker push paulinemh/img-explo:latest"
   }
 }

@@ -20,7 +20,7 @@ class PageImg extends PureComponent {
     this.getImages(pathname === '/' ? '' : pathname);
   }
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.path !== prevProps.match.params.path) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
       const {
         location: { pathname },
       } = this.props;
@@ -49,7 +49,7 @@ class PageImg extends PureComponent {
         <p>no images</p>
       );
     const links = directories.map(({ dirTitle, path }) => (
-      <ALink key={path} href={path}>
+      <ALink key={path} to={path}>
         {dirTitle}
       </ALink>
     ));
@@ -57,7 +57,7 @@ class PageImg extends PureComponent {
     return (
       <div>
         <Menu>
-          <ALink href="/">home</ALink>
+          <ALink to="/">home</ALink>
           {links}
         </Menu>
         <ContainerImg>{imagesMapped}</ContainerImg>
