@@ -9,9 +9,8 @@
     "nodemon": "^1.18.10"
   },
   "scripts": {
+    "build": "docker-compose up --build",
     "start:dev": "nodemon index.js",
-    "test": "jest",
-    "build": "docker build -f ../Dockerfile -t paulinemh/img-explo:latest ../",
-    "deploy": "npm run build && docker push paulinemh/img-explo:latest"
+    "test": "jest"
   }
 }
